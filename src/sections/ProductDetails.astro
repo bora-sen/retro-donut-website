@@ -1,0 +1,47 @@
+<section id="ProductDetails" class="h-screen flex flex-col lg:flex-row lg:overflow-auto divide-black divide-x-2">
+  <div id="left_section" class="bg-red-300 w-full flex flex-col items-center justify-center">
+    <div class="w-[25rem] gap-12 flex flex-col text-2xl overflow-hidden">
+      <p class="animate_desc_p leading-relaxed">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Est quibusdam perspiciatis soluta iste atque beatae velit iure quod numquam fugit fugiat aut
+        quos corrupti unde ipsam, id alias quia fuga!
+      </p>
+      <p class="animate_desc_p leading-relaxed">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Est quibusdam perspiciatis soluta iste atque beatae velit iure quod numquam fugit fugiat aut
+        quos corrupti unde ipsam, id alias quia fuga!
+      </p>
+      <p class="animate_desc_p leading-relaxed">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Est quibusdam perspiciatis soluta iste atque beatae velit iure quod numquam fugit fugiat aut
+        quos corrupti unde ipsam, id alias quia fuga!
+      </p>
+    </div>
+  </div>
+  <div id="center_section" class="bg-blue-300 w-full flex items-center justify-center">
+    <video id="right_side_video" class="w-full h-full object-cover object-center" src="/donut-render.mp4"></video>
+  </div>
+</section>
+<script>
+  import gsap from "gsap"
+  import ScrollTrigger from "gsap/ScrollTrigger"
+  gsap.registerPlugin(ScrollTrigger)
+  document.addEventListener("DOMContentLoaded", () => {
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#ProductDetails",
+        start: "top top",
+        end: "200% center",
+        pin: "#ProductDetails",
+        pinSpacing: true,
+        markers: true,
+        scrub: 1.4,
+      },
+    })
+    tl.from(".animate_desc_p", {
+      xPercent: -100,
+      stagger: 0.2,
+      ease: "power3.Out",
+    }).to("#right_side_video", {
+      currentTime: 2,
+      ease: "power3.in",
+    })
+  })
+</script>
