@@ -7,5 +7,5 @@ export default defineConfig({
   integrations: [tailwind()],
   outDir: "build",
   site: "https://bora-sen.github.io",
-  base: "/retro-donut-website",
+  base: "/retro-donut-website/",
 })
