@@ -8,4 +8,7 @@ export default defineConfig({
   outDir: "build",
   site: "https://bora-sen.github.io",
   base: "/retro-donut-website/",
+  build: {
+    assets: "assets",
+  },
 })
